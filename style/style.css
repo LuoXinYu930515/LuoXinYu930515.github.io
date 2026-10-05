@@ -26,11 +26,24 @@ body {
     border: 5px solid rgb(71, 54, 32);
 }
 
+#myContact {
+    display: block;
+    text-align: center;
+    font-size: small;
+}
+
 .profile {
     display: flex;
     align-items: flex-start;
     gap: 70px;
     padding: 30px;
+}
+
+/* 左侧固定宽度，内部文字居中 */
+.profile-sidebar {
+  width: 300px;
+  flex-shrink: 0;
+  text-align: center;
 }
 
 
@@ -58,26 +71,78 @@ li {
 }
 
 
-
-
-
-/* h1 {
-  font-size: 40px;
-  text-align: center;
-  margin: 0;
-  padding: 20px 0;
-  color: #00539f;
-  text-shadow: 3px 3px 1px rgb(199, 196, 188);
+.post-catagory-nav {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+    text-align: center;
+    font-size: 12px;
+    margin-top: 50px;
+    padding: 8px;
+    margin: 60px auto 0px;
+    background-color: rgb(71, 54, 32);
 }
 
-p,
-li {
-  font-size: 16px;
-  line-height: 2;
-  letter-spacing: 1px;
+/* 把链接显示成按钮 */
+.post-catagory-nav a {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0;
+    padding: 10px 12px;
+    /* border: 1px solid rgb(71, 54, 32); */
+    border: none;
+    border-radius: 0;
+    background-color: transparent;
+
+    color: rgb(255, 248, 239);
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
 }
 
-img {
-  display: block;
-  margin: 0 auto;
-} */
+/* 从第二个链接开始，在左边加一条竖线 */
+.post-catagory-nav a + a {
+  border-left: 1px solid white;
+}
+
+/* 鼠标悬停或键盘选中时改变颜色 */
+.post-catagory-nav a:hover,
+.post-catagory-nav a:focus-visible {
+  background-color: rgb(219, 166, 96);
+  color: white;
+}
+
+.back-icon {
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+  margin-right: 4px;
+}
+
+.bottom-line {
+  width: 200px;
+  height: 40px;
+  align-self: center;
+  background: rgb(71, 54, 32);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bottom-line a {
+  color: white;
+}
+
+.bottom-line .back-icon {
+  filter: brightness(0) invert(1);
+}
+
+@media (max-width: 600px) {
+  .post-catagory-nav {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
